@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="navbar navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			
 			<div class="container">
@@ -15,9 +15,10 @@
 				<ul class="nav">
 					<% if user_signed_in? %>
 					<li><%= link_to current_user.full_name, profile_path(current_user) %></li>
-					<% end %>
+					<li><%= link_to 'Friends', user_friendships_path %></li>
 					<li><%= link_to "Feed", feed_path %></li>
 					<li><%= link_to "New Status", new_status_path %></li>
+					<% end %>					
 				</ul>
 				<ul class="nav pull-right">
 					<% if user_signed_in? %>
@@ -41,5 +42,15 @@
 
 		<%= yield %>
 	</div>
+	
+	<footer class="footer">
+		<div class="container">
+			<ul class="footer-links">
+				<p><br />I am a footer.</p>
+				<p>I have a few things to say.</p>
+				<li class="muted"><%= link_to 'Friends', user_friendships_path %> | <%= link_to 'Friends', user_friendships_path %> | <%= link_to 'Friends', user_friendships_path %></li>
+			</ul>
+		</div>
+	</footer>
 </body>
 </html>

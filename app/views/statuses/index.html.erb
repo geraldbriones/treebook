@@ -3,8 +3,8 @@
 </div>
 
 <% @statuses.each do |status| %>
+<div class="span1" style="padding: 10px 10px 0 0;"><%= link_to image_tag(status.user.gravatar_url), profile_path(status.user) %></div>
 <div class="status">
-	<div class="gravatar"><% image_tag status.user.gravatar_url %></div>
 	<strong><%= link_to status.user.full_name, profile_path(status.user) %></strong>
 	<p><%= status.content %></p>
 	<div class="meta">
