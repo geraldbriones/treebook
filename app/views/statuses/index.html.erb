@@ -4,6 +4,7 @@
 
 <% @statuses.each do |status| %>
 <div class="status">
+	<div class="gravatar"><% image_tag status.user.gravatar_url %></div>
 	<strong><%= status.user.full_name %></strong>
 	<p><%= status.content %></p>
 	<div class="meta">
