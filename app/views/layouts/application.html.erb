@@ -10,11 +10,10 @@
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<% if user_signed_in? %>
-					<%= link_to "Treebook", feed_path %>
-				<% end %>
 				<ul class="nav">
+					<li><a href="#">Treebook</a></li>
 					<li><%= link_to "Feed", feed_path %></li>
+					<li><%= link_to "New Status", new_status_path %></li>
 				</ul>
 				<ul class="nav pull-right">
 					<% if user_signed_in? %>
