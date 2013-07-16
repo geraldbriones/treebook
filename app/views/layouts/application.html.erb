@@ -9,11 +9,12 @@
 <body>
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
+			
 			<div class="container">
+				<%= link_to "Treebook", root_path, :class => "brand" %>
 				<ul class="nav">
-					<li><a href="#">Treebook</a></li>
 					<% if user_signed_in? %>
-					<li><%= link_to current_user.full_name, profiles_show_path(current_user) %></li>
+					<li><%= link_to current_user.full_name, profile_path(current_user) %></li>
 					<% end %>
 					<li><%= link_to "Feed", feed_path %></li>
 					<li><%= link_to "New Status", new_status_path %></li>
